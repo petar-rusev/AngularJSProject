@@ -1,5 +1,4 @@
 'use strict';
-
 app.factory('authService',
     function ($http, baseServiceUrl) {
         return {

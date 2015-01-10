@@ -1,10 +1,16 @@
-<div class="navbar navbar-default">
+<div class="navbar navbar-inverse">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Addelisor</a>
+        <a class="navbar-brand" href="#"><b>Addelisor</b></a>
+    </div>
+    <div class="navbar-collapse collapse navbar-inverse-collapse">
+        <ul ng-if="authService.isLoggedIn()"class="nav navbar-nav navbar-right">
+            <li><a href="#"><b>{{authService.getCurrentUser().username}}</b></a></li>
+            <li><a ng-click="logout()"><b>Logout</b></a></li>
+        </ul>
     </div>
 </div>

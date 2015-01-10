@@ -2,3 +2,12 @@
     width:100px;
     height:100px;
 }
+li{
+    list-style: none;
+}
+ul.sidebar-menu li:hover {
+    background: #df6a1c;
+}
+.selected{
+    background:#df6a1c;
+}

@@ -1,10 +1,11 @@
 <pagination total-items="ads.numItems" ng-model="adsParams.startPage"
             items-per-page="adsParams.pageSize" ng-change="reloadAds()"
-            max-size="9" boundary-links="true">
+            max-size="10" boundary-links="true">
 </pagination>
 <div class="panel panel-primary" ng-repeat="ad in ads.ads">
     <div class="panel-heading">
         <h3 class="panel-title">{{ad.title}}</h3>
+        <h3 class="panel-title">{{ad.date | date:'dd-MMM-yyyy'}}</h3>
     </div>
     <div class="panel-body">
         <div class="well well-sm">
@@ -16,19 +17,19 @@
             <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
         </div>
         <div class="well well">
-            <label for="addText"></label>
+            <label for="addText">Description</label>
             <div id="addText">{{ad.text}}</div>
         </div>
         <div class="well well-sm">
-            <label for="addName"></label>
+            <label for="addName">Publisher</label>
             <div id="addName">{{ad.ownerName}}</div>
         </div>
         <div class="well well-sm">
-            <label for="ownEmail"></label>
+            <label for="ownEmail">Email</label>
             <div id="ownEmail">{{ad.ownerEmail}}</div>
         </div>
         <div class="well well-sm">
-            <label for="ownPhone"></label>
+            <label for="ownPhone">Phone</label>
             <div id="ownPhone">{{ad.ownerPhone}}</div>
         </div>
     </div>
