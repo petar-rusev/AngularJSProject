@@ -12,5 +12,7 @@ app.controller('AppController',
             notifyService.showInfo("Logout Successful!");
             $location.path('/home.html');
         };
+
+
     }
 );

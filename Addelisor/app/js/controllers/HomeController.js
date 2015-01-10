@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('HomeController',
-    function ($scope, adsService, notifyService) {
+    function ($scope,adsService, notifyService) {
         adsService.getAds(
             null,
             function success(data) {

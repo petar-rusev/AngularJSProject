@@ -18,21 +18,21 @@
     <div ng-include="'templates/partial/header.html'"></div>
 </header>
 
-<div id='app-content'>
-    <div class='col-md-2 sidebar'>
-        <div ng-include="'templates/partial/left-sidebar.html'"></div>
-    </div>
 
-    <div class='col-md-8' ng-view>
-    </div>
-
-    <div class='col-md-2 sidebar' ng-controller="RightSidebarController">
-        <div ng-include="'templates/partial/right-sidebar.html'"></div>
-    </div>
+<div class='col-md-2 sidebar'>
+    <div ng-include="'templates/partial/left-sidebar.html'"></div>
 </div>
 
-<footer class="row" id="app-footer">
-    <div class="col-md-12">
+<div class='col-md-8' ng-view>
+</div>
+
+<div class='col-md-2 sidebar' ng-controller="RightSidebarController">
+    <div ng-include="'templates/partial/right-sidebar.html'"></div>
+</div>
+
+
+<footer class="col-md-12" id="app-footer">
+    <div>
     &copy; 2014 by Petar Rusev. All Rights Reserved
     </div>
 </footer>
@@ -51,12 +51,14 @@
 <script src="js/services/adsServices.js"></script>
 <script src="js/services/authService.js"></script>
 <script src="js/services/notifyService.js"></script>
+<script src="js/services/userService.js"></script>
 
 <script src="js/controllers/AppController.js"></script>
 <script src="js/controllers/HomeController.js"></script>
 <script src="js/controllers/LoginController.js"></script>
 <script src="js/controllers/RegisterController.js"></script>
 <script src="js/controllers/RightSidebarController.js"></script>
+<script src="js/controllers/UserCreateAddController.js"></script>
 </body>
 
 </html>

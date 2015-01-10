@@ -9,7 +9,7 @@ app.controller('LoginController',
                     $location.path("/");
                 },
                 function error(err) {
-                    notifyService("Login Unsuccessful!",err);
+                    notifyService.showError("Login Unsuccessful!");
                 }
             );
         };

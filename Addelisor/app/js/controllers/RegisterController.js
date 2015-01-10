@@ -12,7 +12,7 @@ app.controller('RegisterController',
                 $location.path("/login");
                 },
                 function error(err) {
-                    notifyService.showError("User registration failed", err);
+                    notifyService.showError("User registration failed");
                 }
             );
         };

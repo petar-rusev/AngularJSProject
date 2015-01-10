@@ -2,8 +2,8 @@
     <div class="panel-heading">
         <h3 class="panel-title">Categories</h3>
     </div>
-    <ul class="sidebar-menu">
-        <li  style="margin-top: 10px"class="special" ng-class="{'selected':selectedCategoryId==null}" ng-click="categoryClicked(null)">
+    <ul style="margin-top: 10px" class="sidebar-menu">
+        <li class="special" ng-class="{'selected':selectedCategoryId==null}" ng-click="categoryClicked(null)">
             All
         </li>
         <li ng-repeat="category in categories" ng-click="categoryClicked(category.id)" ng-class="{'selected':selectedCategoryId==category.id}">
