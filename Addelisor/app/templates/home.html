@@ -1,0 +1,38 @@
+<pagination total-items="ads.numItems" ng-model="adsParams.startPage"
+            items-per-page="adsParams.pageSize" ng-change="reloadAds()"
+            max-size="9" boundary-links="true">
+</pagination>
+<div class="panel panel-primary" ng-repeat="ad in ads.ads">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ad.title}}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="well well-sm">
+            <label for="date"></label>
+            <div id="date">{{ad.date | date:'dd-MMM-yyyy'}}</div>
+        </div>
+        <label for="image"></label>
+        <div id="image" ng-if='ad.imageDataUrl'>
+            <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
+        </div>
+        <div class="well well">
+            <label for="addText"></label>
+            <div id="addText">{{ad.text}}</div>
+        </div>
+        <div class="well well-sm">
+            <label for="addName"></label>
+            <div id="addName">{{ad.ownerName}}</div>
+        </div>
+        <div class="well well-sm">
+            <label for="ownEmail"></label>
+            <div id="ownEmail">{{ad.ownerEmail}}</div>
+        </div>
+        <div class="well well-sm">
+            <label for="ownPhone"></label>
+            <div id="ownPhone">{{ad.ownerPhone}}</div>
+        </div>
+    </div>
+</div>
+<div ng-if="ads.ads.length==0" class="box no-data">
+    No ads found.
+</div>
