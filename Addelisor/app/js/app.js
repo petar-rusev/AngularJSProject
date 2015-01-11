@@ -24,23 +24,27 @@ app.config(function ($routeProvider) {
     $routeProvider.when('/user/createAdd',{
         templateUrl:'templates/user/createAdd.html',
         controller:'UserCreateAddController'
-    })
+    });
     $routeProvider.when('/user/ownAds',{
         templateUrl:'templates/user/ownAds.html',
         controller:'UserCreateAddController'
-    })
+    });
     $routeProvider.when('/user/publishedAds',{
         templateUrl:'templates/user/publishedAds.html',
         controller:'UserCreateAddController'
-    })
+    });
     $routeProvider.when('/user/waitingAds',{
         templateUrl:'templates/user/waitingAds.html',
         controller:'UserCreateAddController'
-    })
+    });
     $routeProvider.when('/user/waitingAds',{
-        templateUrl:'templates/user/waitingAds.html',
+        templateUrl:'templates/user/rejectedAds.html',
         controller:'UserCreateAddController'
-    })
+    });
+    $routeProvider.when('/user/inactiveAds',{
+        templateUrl:'templates/user/inactiveAds.html',
+        controller:'UserCreateAddController'
+    });
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );

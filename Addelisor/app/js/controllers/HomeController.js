@@ -11,10 +11,7 @@ app.controller('HomeController',
                 notifyService.showError("Cannot load ads", err);
             }
         );
-        $scope.adsParams={
-            'startPage':1,
-            'pageSize': 3
-        };
+
         $scope.reloadAds=function(){
             adsService.getAds(
                 $scope.adsParams,
