@@ -9,29 +9,34 @@
         <h3 class="panel-title">{{ad.date | date:'dd-MMM-yyyy'}}</h3>
     </div>
     <div class="panel-body">
-        <div class="well well-sm">
-            <label for="date"></label>
-            <div id="date">{{ad.date | date:'dd-MMM-yyyy'}}</div>
-        </div>
-        <label for="image"></label>
-        <div id="image" ng-if='ad.imageDataUrl'>
-            <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
-        </div>
-        <div class="well well">
-            <label for="addText">Description</label>
-            <div id="addText">{{ad.text}}</div>
-        </div>
-        <div class="well well-sm">
-            <label for="addName">Publisher</label>
-            <div id="addName">{{ad.ownerName}}</div>
-        </div>
-        <div class="well well-sm">
-            <label for="ownEmail">Email</label>
-            <div id="ownEmail">{{ad.ownerEmail}}</div>
-        </div>
-        <div class="well well-sm">
-            <label for="ownPhone">Phone</label>
-            <div id="ownPhone">{{ad.ownerPhone}}</div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="image"></label>
+                <div id="image" ng-if='ad.imageDataUrl'>
+                    <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="well well">
+                    <label for="addText">Description</label>
+                    <div id="addText">{{ad.text}}</div>
+                </div>
+                <div class="well well-sm">
+                    <label for="addName">Category</label>
+                    <div id="addName">{{ad.categoryName}}</div>
+                </div>
+                <div class="well well-sm">
+                    <label for="ownEmail">Town</label>
+                    <div id="ownEmail">{{ad.townName}}</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="well well-sm">
+                    <label for="addStatus">Status</label>
+                    <div id="addStatus">{{ad.status}}</div>
+                </div>
+                <a ng-click="" class="btn btn-primary">Deactivate</a>
+            </div>
         </div>
     </div>
 </div>
