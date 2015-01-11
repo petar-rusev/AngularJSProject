@@ -1,0 +1,47 @@
+<pagination total-items="ads.numItems" ng-model="adsParams.startPage"
+            items-per-page="adsParams.pageSize" ng-change="reloadAds()"
+            max-size="10" boundary-links="true">
+</pagination>
+<div class="panel panel-primary" ng-repeat="ad in publishedAds.ads">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ad.title}}</h3>
+        <h3 class="panel-title">{{ad.date | date:'dd-MMM-yyyy'}}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="image"></label>
+                <div id="image" ng-if='ad.imageDataUrl'>
+                    <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="well well">
+                    <label for="addText">Description</label>
+                    <div id="addText">{{ad.text}}</div>
+                </div>
+                <div class="well well-sm">
+                    <label for="addName">Category</label>
+                    <div id="addName">{{ad.categoryName}}</div>
+                </div>
+                <div class="well well-sm">
+                    <label for="ownEmail">Town</label>
+                    <div id="ownEmail">{{ad.townName}}</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="well well-sm">
+                    <label for="addStatus">Status</label>
+                    <div id="addStatus">{{ad.status}}</div>
+                </div>
+                <a ng-click="" class="btn btn-primary">Edit</a>
+                <a ng-click="" class="btn btn-primary">Publish Again</a>
+                <a ng-click="" class="btn btn-primary">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="userAds.ads.length==0" class="box no-data">
+    No ads found.
+</div>
