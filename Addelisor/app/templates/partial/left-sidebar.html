@@ -1,4 +1,18 @@
 
+<!-- Navigation box for logged in normal users (not admins) -->
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Navigation</h3>
+    </div>
+    <div class="panel-body">
+        <p><a href="#/">Home</a></p>
+        <div ng-if="authService.isNormalUser()">
+            <p ng-click="loadMyAds()"><a href="#/user/ownAds">My Ads</a></p>
+            <p><a href="#/user/createAdd">Publish New Ad</a></p>
+            <p><a href="#/user/editProfile">Edit Profile</a></p>
+        </div>
+    </div>
+</div>
 
 <!-- Login / register box for anonymous site visitors -->
 <div ng-if="authService.isAnonymous()">
@@ -16,20 +30,7 @@
 
 </div>
 
-<!-- Navigation box for logged in normal users (not admins) -->
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Navigation</h3>
-    </div>
-    <div class="panel-body">
-        <p><a href="#/home">Home</a></p>
-        <div ng-if="authService.isNormalUser()">
-            <p><a href="#/user/ownAds">My Ads</a></p>
-            <p><a href="#/user/createAdd">Publish New Ad</a></p>
-            <p><a href="#/user/editProfile">Edit Profile</a></p>
-        </div>
-    </div>
-</div>
+
 <div ng-if="authService.isNormalUser()" class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">My Adds</h3>

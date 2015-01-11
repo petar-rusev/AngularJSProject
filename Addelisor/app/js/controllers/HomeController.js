@@ -2,6 +2,10 @@
 
 app.controller('HomeController',
     function ($scope,adsService, notifyService) {
+        $scope.adsParams = {
+            'startPage' : 1,
+            'pageSize' : 4
+        };
         adsService.getAds(
             null,
             function success(data) {
