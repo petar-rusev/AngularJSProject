@@ -16,6 +16,7 @@ app.controller('UserAddController',
                 function success() {
                     notifyService.showInfo("Advertisement submitted for approval. Once approved, it will be published.")
                     $location.path("/user/ownAds");
+                    $rootScope.loadMyAds();
                 },
                 function error(err) {
                     notifyService.showError("Advertisment is not submitted. Please try again.")
@@ -41,6 +42,7 @@ app.controller('UserAddController',
             $http({method:"DELETE",headers:headers,url:baseServiceUrl+"/api/user/ads/"+id})
                 .success(function(data){
                     notifyService.showInfo("Deleted!")
+                    $rootScope.loadMyAds();
                 }).error(function(error){
                     notifyService.showError("Try Again!")
                 })
@@ -61,6 +63,7 @@ app.controller('UserAddController',
             $http({method:"PUT",headers:headers,url:baseServiceUrl+"/api/user/ads/publishagain/"+id})
                 .success(function(data){
                     notifyService.showInfo("Successful")
+                    $rootScope.loadMyAds();
                 }).error(function(resp){
                     notifyService.showError("Unsuccessful")
                 })

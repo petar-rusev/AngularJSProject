@@ -72,6 +72,24 @@ app.factory('authService',
                     }).error(function(data){
                         error(data)
                     })
+            },
+            editUserProfile: function(data,success,error){
+                var headers = this.getAuthHeaders()
+                $http({method:"PUT",headers:headers,data:data, url:baseServiceUrl+"/api/user/Profile"})
+                    .success(function(data){
+                        success(data)
+                    }).error(function(data){
+                        error(data)
+                    })
+            },
+            editUserPassword: function(data,success,error){
+                var headers = this.getAuthHeaders()
+                $http({method:"PUT",data:data,headers:headers, url:baseServiceUrl+"/api/user/changePassword"})
+                    .success(function(data){
+                        success(data)
+                    }).error(function(data){
+                        error(data)
+                    })
             }
         }
     }
