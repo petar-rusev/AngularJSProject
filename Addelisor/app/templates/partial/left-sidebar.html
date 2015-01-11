@@ -34,23 +34,24 @@
         <h3 class="panel-title">Navigation</h3>
     </div>
     <div class="panel-body">
-        <p><a href="#/">Home</a></p>
-        <p><a href="#/user/ads">My Ads</a></p>
+        <p><a href="#/"></a></p>
+        <p><a href="#/user/ownAds">My Ads</a></p>
         <p><a href="#/user/createAdd">Publish New Ad</a></p>
         <p><a href="#/user/editProfile">Edit Profile</a></p>
     </div>
 </div>
-<!-- Navigation box for logged in admins -->
-<div ng-if="authService.isAdmin()" class="panel panel-primary">
+<div ng-if="authService.isNormalUser()" class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Navigation</h3>
+        <h3 class="panel-title">My Adds</h3>
     </div>
     <div class="panel-body">
-        <p><a href="#/">Ads</a></p>
-        <p><a href="#/user/ads">Published</a></p>
-        <p><a href="#/user/newAdd">Waiting Approval</a></p>
-        <p><a href="#/user/editProfile">Inactive</a></p>
-        <p><a ng-click="logout()">Rejected</a></p>
+        <p><a href="#/user/ownAds">All</a></p>
+        <p><a href="#/user/publishedAds">Published</a></p>
+        <p><a href="#/user/waitingAds">Waiting Arrpoval</a></p>
+        <p><a href="#/user/inactiveAds">Inactive</a></p>
+        <p><a href="#/user/rejectedAds">Rejected</a></p>
     </div>
 </div>
+<!-- Navigation box for logged in admins -->
+
 

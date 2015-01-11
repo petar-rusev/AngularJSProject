@@ -2,7 +2,7 @@
             items-per-page="adsParams.pageSize" ng-change="reloadAds()"
             max-size="10" boundary-links="true">
 </pagination>
-<div class="panel panel-primary" ng-repeat="ad in ads.ads">
+<div class="panel panel-primary" ng-repeat="ad in userAds.ads">
     <div class="panel-heading">
         <h3 class="panel-title">{{ad.title}}</h3>
         <h3 class="panel-title">{{ad.date | date:'dd-MMM-yyyy'}}</h3>
@@ -34,6 +34,6 @@
         </div>
     </div>
 </div>
-<div ng-if="ads.ads.length==0" class="box no-data">
+<div ng-if="userAds.ads.length==0" class="box no-data">
     No ads found.
 </div>

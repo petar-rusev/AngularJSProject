@@ -25,6 +25,22 @@ app.config(function ($routeProvider) {
         templateUrl:'templates/user/createAdd.html',
         controller:'UserCreateAddController'
     })
+    $routeProvider.when('/user/ownAds',{
+        templateUrl:'templates/user/ownAds.html',
+        controller:'UserCreateAddController'
+    })
+    $routeProvider.when('/user/publishedAds',{
+        templateUrl:'templates/user/publishedAds.html',
+        controller:'UserCreateAddController'
+    })
+    $routeProvider.when('/user/waitingAds',{
+        templateUrl:'templates/user/waitingAds.html',
+        controller:'UserCreateAddController'
+    })
+    $routeProvider.when('/user/waitingAds',{
+        templateUrl:'templates/user/waitingAds.html',
+        controller:'UserCreateAddController'
+    })
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );

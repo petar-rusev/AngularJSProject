@@ -13,7 +13,7 @@ app.controller('HomeController',
         );
         $scope.adsParams={
             'startPage':1,
-            'pageSize': 2
+            'pageSize': 3
         };
         $scope.reloadAds=function(){
             adsService.getAds(
