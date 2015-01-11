@@ -1,7 +1,7 @@
 'use strict';
 
 app.factory('authService',
-    function ($http, baseServiceUrl) {
+    function ($http,$location, baseServiceUrl) {
         return {
             login: function(userData, success, error) {
                 var request = {
@@ -12,6 +12,9 @@ app.factory('authService',
                 $http(request).success(function(data) {
                     sessionStorage['currentUser'] = JSON.stringify(data);
                     success(data);
+                    if(data.isAdmin){
+                        $location.path("/admin/adminDecisionAd");
+                    }
                 }).error(error);
             },
 

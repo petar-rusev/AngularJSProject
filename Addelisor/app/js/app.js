@@ -49,7 +49,12 @@ app.config(function ($routeProvider) {
         templateUrl:'templates/user/editProfil.html',
         controller:'UserProfileController'
 
-    })
+    });
+    $routeProvider.when('/admin/adminDecisionAd',{
+        templateUrl:'templates/admin/adminDecisionAd.html',
+        controller:'AdminController'
+
+    });
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );
