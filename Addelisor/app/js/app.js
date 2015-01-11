@@ -37,7 +37,7 @@ app.config(function ($routeProvider) {
         templateUrl:'templates/user/waitingAds.html',
         controller:'UserAddController'
     });
-    $routeProvider.when('/user/waitingAds',{
+    $routeProvider.when('/user/rejectedAds',{
         templateUrl:'templates/user/rejectedAds.html',
         controller:'UserAddController'
     });
