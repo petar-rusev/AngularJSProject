@@ -21,11 +21,10 @@
 
                 <p>
                     <label for="image">Image:</label>
-                    <input type="file" id="image"
-                           onchange="angular.element(this).scope().fileSelected(this)" />
-                <div style="width:100px" class="image-box">
-                    <p>Image Preview</p>
-                </div>
+                    <input type="file" id="image"onchange="angular.element(this).scope().fileSelected(this)" />
+                   <div class="image-box">
+                        <p>Image Preview</p>
+                    </div>
                 </p>
 
                 <div class="form-group">
@@ -48,8 +47,8 @@
                 </div>
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                        <a href="#" class="btn btn-primary" ng-click="publishAd(adData)">Publish</a>
-                        <a href="/user/userAds" class="btn btn-primary">Cancel</a>
+                        <a href="#/user/ownAds" class="btn btn-primary" ng-click="publishAd(adData)">Publish</a>
+                        <a href="#/user/ownAds" class="btn btn-primary">Cancel</a>
                     </div>
                 </div>
             </fieldset>

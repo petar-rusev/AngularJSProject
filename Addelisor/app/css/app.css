@@ -11,3 +11,7 @@ ul.sidebar-menu li:hover {
 .selected{
     background:#df6a1c;
 }
+#pic{
+    width:100px;
+    height:100px;
+}
