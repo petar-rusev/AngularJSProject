@@ -63,6 +63,15 @@ app.factory('authService',
                     headers['Authorization'] = 'Bearer ' + currentUser.access_token;
                 }
                 return headers;
+            },
+            getUserProfile: function(success,error){
+                var headers = this.getAuthHeaders()
+                $http({method:"GET",headers:headers, url:baseServiceUrl+"/api/user/Profile"})
+                    .success(function(data){
+                        success(data)
+                    }).error(function(data){
+                        error(data)
+                    })
             }
         }
     }

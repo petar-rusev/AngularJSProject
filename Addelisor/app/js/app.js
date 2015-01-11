@@ -45,6 +45,11 @@ app.config(function ($routeProvider) {
         templateUrl:'templates/user/inactiveAds.html',
         controller:'UserAddController'
     });
+    $routeProvider.when('/user/editProfile',{
+        templateUrl:'templates/user/editProfil.html',
+        controller:'UserProfileController'
+
+    })
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );
