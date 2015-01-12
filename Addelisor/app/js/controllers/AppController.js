@@ -14,7 +14,6 @@ app.controller('AppController',
         };
 
         $rootScope.loadMyAds=function() {
-            console.log("load my ads")
             userService.getUserAds({status: 0}, function success(data) {
                 $scope.inactiveAds = data
             }, function (err) {
