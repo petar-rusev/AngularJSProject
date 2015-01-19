@@ -1,0 +1,105 @@
+<div ng-repeat="ad in adminAds.ads">
+    <div class="bs-component">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span class="panel-title">{{ad.title}}</span>
+
+                <span class="pull-right">
+                    {{ad.date |date:"d-MMM-yyyy"}}
+                </span>
+
+            </div>
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="row" >
+                        <div class="col-md-3">
+                            <div>
+                                <img ng-src="{{ad.imageDataUrl}}" style="height:160px; width:120px" alt=""/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+
+                            <div class="form-group">
+                                <label for="title" class="col-lg-2 control-label">Title:</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="title" placeholder="Title" ng-model="ad.title">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="text" class="col-lg-2 control-label">Text</label>
+                                <div class="col-lg-10">
+                                    <textarea class="form-control" id="text" placeholder="Text" ng-model="ad.text"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ownerUsername" class="col-lg-2 control-label">Username</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="ownerUsername" placeholder="Title" ng-model="ad.ownerUsername">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ownerName" class="col-lg-2 control-label">Name</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="ownerName" placeholder="Title" ng-model="ad.ownerName">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ownerEmail" class="col-lg-2 control-label">Email</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="ownerEmail" placeholder="Title" ng-model="ad.ownerEmail">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ownerPhone" class="col-lg-2 control-label">Phone</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="ownerPhone" placeholder="Title" ng-model="ad.ownerPhone">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="category" class="col-lg-2 control-label">category</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="category" placeholder="Title" ng-model="ad.title">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="town" class="col-lg-2 control-label">Town</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="town" placeholder="Title" ng-model="ad.townName">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="status" class="col-lg-2 control-label">Town</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="status" placeholder="Title" ng-model="ad.status">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    <button type="submit" class="btn btn-primary" ng-click="decisionId(ad.id,'approve')">Publish</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    <button type="submit" class="btn btn-primary" ng-click="decisionId(ad.id,'reject')">Reject</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    <button type="submit" class="btn btn-primary" ng-click="deleteAd(ad.id)">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<pagination total-items="adminAds.numItems" ng-model="params.startPage"
+            items-per-page="params.pageSize" ng-change="reloadAds()"
+            max-size="9" boundary-links="true">
+</pagination>
